@@ -260,7 +260,7 @@ class SRTrainer:
             start_step = time.time()
             inputs = inputs.to(self.device)
             labels = labels.to(self.device)
-            input_lens = input_lens.to(self.device)
+            input_lens = input_lens
             label_lens = label_lens.to(self.device)
             num_samples = label_lens.size(0)
             if num_samples == 0:
