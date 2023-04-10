@@ -208,7 +208,7 @@ class SRTrainer:
         torch.save(self.optimizer.state_dict(), os.path.join(model_path, 'optimizer.pt'))
         torch.save(self.model.state_dict(), os.path.join(model_path, 'model.pt'))
         with open(os.path.join(model_path, 'model.state'), 'w', encoding='utf-8') as f:
-            f.write('{"last_epoch": {}, "test_{}": {}, "test_loss": {}}'.
+            f.write('{{"last_epoch": {}, "test_{}": {}, "test_loss": {}}}'.
                     format(epoch_id, self.configs.metrics_type, error_rate, test_loss))
         if not best_model:
             last_model_path = os.path.join(save_model_path, save_model_name, 'last_model')
